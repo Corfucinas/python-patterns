@@ -40,8 +40,7 @@ class ProductModel(Model):
     item_type = "product"
 
     def __iter__(self):
-        for item in self.products:
-            yield item
+        yield from self.products
 
     def get(self, product):
         try:

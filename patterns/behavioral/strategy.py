@@ -14,10 +14,7 @@ class Order:
         self.discount_strategy = discount_strategy
 
     def price_after_discount(self):
-        if self.discount_strategy:
-            discount = self.discount_strategy(self)
-        else:
-            discount = 0
+        discount = self.discount_strategy(self) if self.discount_strategy else 0
         return self.price - discount
 
     def __repr__(self):
